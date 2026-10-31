@@ -1,0 +1,49 @@
+{
+  "python": "3.14.8",
+  "opencv": "5.0.0",
+  "platform": "Linux-7.2.11-200.fc44.x86_64-x86_64-with-glibc2.43",
+  "input": [
+    1600,
+    1280
+  ],
+  "samples": 3,
+  "statistic": "median",
+  "scenarios": {
+    "identity": {
+      "fresh_ms": 18.91,
+      "cached_ms": 10.36,
+      "output_shape": [
+        1600,
+        1280,
+        3
+      ]
+    },
+    "face": {
+      "fresh_ms": 101.39,
+      "cached_ms": 11.89,
+      "output_shape": [
+        1600,
+        1280,
+        3
+      ]
+    },
+    "body_background": {
+      "fresh_ms": 512.98,
+      "cached_ms": 9.49,
+      "output_shape": [
+        1600,
+        1280,
+        3
+      ]
+    },
+    "manual_liquify_height": {
+      "fresh_ms": 139.06,
+      "cached_ms": 9.51,
+      "output_shape": [
+        1677,
+        1280,
+        3
+      ]
+    }
+  }
+}

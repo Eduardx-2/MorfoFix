@@ -1,0 +1,16 @@
+{
+  "identifier": "default",
+  "description": "Capacidades por defecto de MorfoFix",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "core:event:default",
+    "core:window:allow-set-title",
+    "core:window:allow-close",
+    "core:menu:default",
+    "dialog:default",
+    "log:default",
+    "opener:default",
+    "opener:allow-open-path"
+  ]
+}

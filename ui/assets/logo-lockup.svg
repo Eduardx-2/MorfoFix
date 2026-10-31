@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="312" height="80" viewBox="0 0 312 80" fill="none">
+  <g transform="translate(8 12) scale(0.109375)">
+    <rect width="512" height="512" rx="146" fill="#2dd4bf"/>
+    <path d="M146 352V162Q196 240 256 306 316 240 366 162V352"
+          fill="none" stroke="#062a26" stroke-width="46" stroke-linecap="round" stroke-linejoin="miter"/>
+  </g>
+  <text x="80" y="48" font-family="Inter, system-ui, 'Noto Sans', sans-serif" font-size="30" font-weight="650"
+        letter-spacing=".4" fill="#f3f5f7">Morfo<tspan fill="#2dd4bf">Fix</tspan></text>
+</svg>

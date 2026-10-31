@@ -1,0 +1,58 @@
+[package]
+name = "morfofix"
+version = "0.1.0"
+description = "Shell desktop de MorfoFix (Tauri 2): lifecycle del motor, IPC y persistencia"
+authors = ["Eduardo"]
+edition = "2021"
+default-run = "morfofix"
+
+[lib]
+name = "morfofix_lib"
+crate-type = ["lib", "cdylib", "staticlib"]
+
+[[bin]]
+name = "morfofix"
+path = "src/main.rs"
+required-features = ["desktop"]
+
+[features]
+default = []
+desktop = [
+    "dep:tauri",
+    "dep:tauri-plugin-dialog",
+    "dep:tauri-plugin-log",
+    "dep:tauri-plugin-opener",
+    "dep:tauri-build",
+]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [], optional = true }
+
+[dependencies]
+tauri = { version = "2", features = [], optional = true }
+tauri-plugin-dialog = { version = "2", optional = true }
+tauri-plugin-log = { version = "2", optional = true }
+tauri-plugin-opener = { version = "2", optional = true }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "process", "time", "sync", "io-util"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+getrandom = "0.2"
+hex = "0.4"
+tempfile = "3"
+uuid = { version = "1", features = ["v4", "serde"] }
+log = "0.4"
+futures = "0.3"
+
+[dev-dependencies]
+wiremock = "0.6"
+http = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "process", "time", "sync", "io-util", "io-std"] }
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true

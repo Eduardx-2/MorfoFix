@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "face": {"0": {"intensity_jaw": 0.32, "left_intensity_eyesize": 0.05}},
+  "facelift": {"0": {"intensity_facelift_contour": 0.4}},
+  "body": {"0": {"intensity_bodyslim_waistthin": 0.4}},
+  "body_options": {"bg_protect": true, "head_protect": true},
+  "height": {"band": [0.48, 0.92], "value": 0.25, "keep_canvas": false},
+  "liquify": [{"pts": [[0.41,0.55],[0.42,0.55]], "k": 0.15, "r": 0.03}],
+  "manual_shapes": [{"type": "WaistThin_Rect", "cx": 0.5, "cy": 0.6, "w": 0.3, "h": 0.12, "angle": 0, "value": 0.35, "feather": 0.5, "symmetric": true}],
+  "freeze": {"strokes": [{"pts": [[0.3,0.2]], "radius": 0.02, "erase": false}]},
+  "retouch": {"degree_skin_smooth": 0.5, "brush": {"degree_skin_smooth": {"strokes": []}}},
+  "remove": [{"strokes": [{"pts": [[0.6,0.3]], "radius": 0.015}], "method": "telea"}],
+  "photo": {"crop": [0,0,1,1], "rotate_deg": 0, "flip_h": false, "hsl": {"hue": 0, "saturation": 0, "lightness": 0}}
+}

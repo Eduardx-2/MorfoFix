@@ -1,0 +1,6 @@
+*.task
+*.tflite
+*.onnx
+!manifest.json
+!LICENSES.md
+!.gitignore

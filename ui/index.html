@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MorfoFix</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles/app.css" />
+</head>
+<body>
+  <div id="app" class="app" data-has-image="false" data-mode="rostro" data-view="despues" data-engine="down" data-dirty="false" data-cursor="default">
+    <header class="topbar">
+      <div class="brand">
+        <img class="logo" src="assets/logo.svg" width="28" height="28" alt="" aria-hidden="true" />
+        <div class="wordmark">Morfo<span class="fix">Fix</span></div>
+        <div class="sep"></div>
+        <div class="file-chip">
+          <span class="dot" title="Cambios sin exportar"></span>
+          <span class="name" data-file-name>Sin imagen</span>
+        </div>
+      </div>
+      <div class="top-center">
+        <div class="history">
+          <button class="icon-btn needs-image" data-undo type="button" title="Deshacer" disabled>
+            <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M8.2 8.2H5.4V5.4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12.2A6.4 6.4 0 1 1 7.4 17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+          </button>
+          <button class="icon-btn needs-image" data-redo type="button" title="Rehacer" disabled>
+            <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M15.8 8.2h2.8V5.4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 12.2A6.4 6.4 0 1 0 16.6 17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div class="zoom needs-image">
+          <button class="icon-btn" data-zoom-out type="button" title="Alejar" disabled>
+            <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M6.5 12h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+          <span class="zoom-val" data-zoom>100%</span>
+          <button class="icon-btn" data-zoom-in type="button" title="Acercar" disabled>
+            <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 6.5v11M6.5 12h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="top-right">
+        <button class="btn btn-ghost" data-open type="button">
+          <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M4.6 10.2V8.1c0-1 .8-1.8 1.8-1.8h3.1l1.5 1.8h6.6c1 0 1.8.8 1.8 1.8v1.3" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M4.6 10.5h14.8l-1.3 8.1H5.9L4.6 10.5Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>
+          Abrir
+        </button>
+        <button class="btn btn-primary needs-image" data-export type="button" disabled>
+          <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 14.6V5.2M8.6 8.4 12 5.1l3.4 3.3" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.2 13.4v4.4c0 .9.7 1.6 1.6 1.6h10.4c.9 0 1.6-.7 1.6-1.6v-4.4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+          Exportar
+        </button>
+      </div>
+    </header>
+
+    <div class="main">
+      <nav class="rail needs-image" aria-label="Modos">
+        <button class="rail-item is-on" data-mode-btn="rostro" type="button">
+          <svg class="ico" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.75"/><path d="M8.6 10.1c.35-.02.7.18.78.55M15.4 10.1c-.35-.02-.7.18-.78.55" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M9.1 14.4c.85 1.2 1.9 1.8 2.9 1.8s2.05-.6 2.9-1.8" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+          <span>Rostro</span>
+        </button>
+        <button class="rail-item" data-mode-btn="cuerpo" type="button">
+          <svg class="ico" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="5.4" r="2.15" stroke="currentColor" stroke-width="1.75"/><path d="M8.4 10.2h7.2L16.8 21h-2.3l-.7-7.2h-1.6L12.5 21h-2.3l1.2-10.8H8.4Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>
+          <span>Cuerpo</span>
+        </button>
+        <button class="rail-item" data-mode-btn="retoque" type="button">
+          <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M14.6 4.8 19.2 9.4 9.7 18.9 5 19.9l1-4.7 8.6-10.4Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M13.2 6.3 17.7 10.8" stroke="currentColor" stroke-width="1.75"/><path d="M5.2 5.2l1.4 1.1M6.1 3.8l.3 1.7M3.8 6.2l1.7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span>Retoque</span>
+        </button>
+        <button class="rail-item" data-mode-btn="foto" type="button">
+          <svg class="ico" viewBox="0 0 24 24" fill="none"><rect x="3.6" y="6.2" width="16.8" height="12.4" rx="2.2" stroke="currentColor" stroke-width="1.75"/><circle cx="12" cy="12.4" r="3.1" stroke="currentColor" stroke-width="1.75"/><path d="M8.2 6.2 9.3 4.6h5.4l1.1 1.6" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>
+          <span>Foto</span>
+        </button>
+        <div class="rail-spacer"></div>
+        <button class="rail-item" data-mode-btn="ajustes" type="button">
+          <svg class="ico" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3.1" stroke="currentColor" stroke-width="1.75"/><path d="M12 4.4v1.8M12 17.8v1.8M4.4 12h1.8M17.8 12h1.8M6.6 6.6l1.3 1.3M16.1 16.1l1.3 1.3M17.4 6.6l-1.3 1.3M7.9 16.1l-1.3 1.3" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+          <span>Ajustes</span>
+        </button>
+      </nav>
+
+      <section class="workspace">
+        <div class="canvas">
+          <div class="empty">
+            <div class="dropzone">
+              <div class="drop-ico">
+                <svg class="ico" viewBox="0 0 24 24" fill="none"><rect x="3.7" y="5.2" width="16.6" height="13.6" rx="2.2" stroke="currentColor" stroke-width="1.75"/><circle cx="9" cy="10.1" r="1.55" stroke="currentColor" stroke-width="1.7"/><path d="M4.4 16.4 9.2 12l3.2 2.6 2.4-2.1 5 3.9" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>
+              </div>
+              <h1>Abrí una imagen</h1>
+              <p>o arrastrala aquí</p>
+              <div class="drop-row">
+                <button class="btn btn-primary" data-open type="button">Abrir imagen…</button>
+                <kbd>Ctrl</kbd>+<kbd>O</kbd>
+              </div>
+              <div class="formats">JPG, PNG, WEBP y TIFF</div>
+            </div>
+          </div>
+
+          <div class="stage">
+            <div class="photo-stack">
+              <img class="photo-after" alt="" />
+              <img class="photo-before" alt="" />
+            </div>
+          </div>
+
+          <div class="overlays">
+            <div class="freeze-mask" data-freeze></div>
+            <div data-manip></div>
+            <div data-badges></div>
+            <div class="canvas-tag" data-tag>Zona congelada</div>
+          </div>
+
+          <div class="split-bar"><div class="split-handle"></div></div>
+          <div class="brush-cursor"></div>
+          <div class="spinner" aria-hidden="true"></div>
+
+          <div class="mask-tb" data-mask-tb hidden></div>
+          <div class="tool-sheet" data-tool-sheet hidden></div>
+          <div class="toolbar">
+            <div data-toolbar></div>
+            <div class="toolbar-extra" data-toolbar-extra></div>
+          </div>
+          <div class="hint">Espacio mano · <kbd>\</kbd> antes/después</div>
+          <div class="protect-float">
+            <button class="toggle is-on" data-protect-toggle type="button" role="switch" aria-checked="true"></button>
+            <span>Protección de fondo</span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <div class="panel-head">
+          <button class="panel-back" data-panel-back type="button" hidden></button>
+          <h2 data-panel-title>Sin imagen abierta</h2>
+          <p data-panel-sub>Abrí un JPG, PNG, WEBP o TIFF</p>
+        </div>
+        <div class="panel-body"></div>
+        <div class="panel-foot">
+          <button class="btn btn-ghost" data-reset type="button" disabled>Restablecer modo</button>
+          <button class="btn btn-ghost" data-secondary type="button" disabled>—</button>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="statusbar">
+      <span data-dims>—</span>
+      <span data-mode-info>100% · Rostro</span>
+      <span class="grow"></span>
+      <span class="chip">Local · sin conexión</span>
+    </footer>
+
+    <div class="toast" role="status">
+      <span class="toast-msg">El motor local no responde</span>
+      <button class="btn btn-ghost" data-retry type="button">Reintentar</button>
+    </div>
+  </div>
+
+  <input id="file-open" type="file" accept="image/jpeg,image/png,image/webp,image/tiff,.jpg,.jpeg,.png,.webp,.tif,.tiff" />
+  <script type="module" src="js/controllers/app.js"></script>
+</body>
+</html>

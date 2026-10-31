@@ -1,0 +1,39 @@
+{
+  "productName": "MorfoFix",
+  "version": "0.1.0",
+  "identifier": "com.eduardo.morfofix",
+  "build": {
+    "frontendDist": "../ui"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "main",
+        "title": "MorfoFix",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 1280,
+        "minHeight": 800
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' blob: data:; connect-src ipc: http://ipc.localhost",
+      "capabilities": ["default"]
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": [
+      "LICENSES.md"
+    ]
+  },
+  "plugins": {}
+}
