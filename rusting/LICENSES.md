@@ -1,6 +1,5 @@
 # Licencias de modelos y runtime — MorfoFix
-
-MorfoFix no incluye modelos ni código de InShot. Los pesos se descargan
+Los pesos se descargan
 aparte (`mofixPy/scripts/fetch_models.py`) y se verifican por SHA-256.
 
 Consultá `mofixPy/models/manifest.json` para la lista concreta empaquetada
