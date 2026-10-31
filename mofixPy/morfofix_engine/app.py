@@ -162,7 +162,7 @@ def create_app(*,models_dir:Path,cache_dir:Path|None=None,token:str|None=None,po
             if 'face' in body.what:
                 t=time.perf_counter(); faces=detect_faces(sess.original,registry,max_faces=body.max_faces)
                 if not faces and registry.path_if_ok('pose_landmarker_full'):
-                    # Cuerpo entero: la cara no aparece ni con tiles; reintento con recorte de cabeza por pose.
+                    # aquí Cuerpo entero la cara no aparece ni con tiles,reintente con recorte de cabeza por pose.
                     from morfofix_engine.inference.face import head_boxes_from_bodies
                     hb=head_boxes_from_bodies(detect_bodies(sess.original,registry,max_people=body.max_people),*sess.original.shape[:2])
                     if hb:
