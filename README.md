@@ -1,3 +1,3 @@
 # MorfoFix
 
-MorfoFix - Editor de Rostro y Cuerpo, mejora tu cuerpo en las imágenes.
+MorfoFix - Editor de Rostro y Cuerpo local, mejora tu cuerpo en las imágenes.
