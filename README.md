@@ -1,8 +1,9 @@
 # MorfoFix
 
 MorfoFix - Editor de Rostro y Cuerpo local, mejora tu cuerpo en las imágenes.
-<a href="https://github.com/Eduardx-2/MorfoFix/blob/main/rusting/icons/icon.png"><img alt="https://github.com/Eduardx-2/MorfoFix/blob/main/rusting/icons/icon.png" src="https://github.com/Eduardx-2/MorfoFix/blob/main/rusting/icons/icon.png"></a>
 
+## Cuerpo
+<a href="https://github.com/Eduardx-2/MorfoFix/blob/main/mofixPy/docs/morfoCuerpo.png"><img alt="https://github.com/Eduardx-2/MorfoFix/blob/main/mofixPy/docs/morfoCuerpo.png" src="https://github.com/Eduardx-2/MorfoFix/blob/main/mofixPy/docs/morfoCuerpo.png"></a>
 ```
             ┌──────────── engine (Python 3.12, FastAPI, 127.0.0.1) ─────────────┐
  imagen ──► │ io.load (EXIF) ─► Session(original, preview, caches)              │
@@ -19,9 +20,6 @@ MorfoFix - Editor de Rostro y Cuerpo local, mejora tu cuerpo en las imágenes.
             │        └─► preview JPEG (≤1600 px)  |  export full-res            │
             └───────────────────────────────────────────────────────────────────┘
 ```
-
-## Cuerpo
-<a href="https://github.com/Eduardx-2/MorfoFix/blob/main/mofixPy/docs/morfoCuerpo.png"><img alt="https://github.com/Eduardx-2/MorfoFix/blob/main/mofixPy/docs/morfoCuerpo.png" src="https://github.com/Eduardx-2/MorfoFix/blob/main/mofixPy/docs/morfoCuerpo.png"></a>
 ¿Por qué MorfoFix?
 - Editor de Rostro y Cuerpo.
 - MorfoFix es 100% Local, sus fotos no se cargan a ningún servidor externo.
