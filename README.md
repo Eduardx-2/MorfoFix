@@ -1,6 +1,8 @@
 # MorfoFix
 
 MorfoFix - Editor de Rostro y Cuerpo local, mejora tu cuerpo en las imágenes.
+## Pantalla
+<a href="https://github.com/Eduardx-2/MorfoFix/blob/main/mofixPy/docs/morfoInicial.png"><img alt="https://github.com/Eduardx-2/MorfoFix/blob/main/mofixPy/docs/morfoInicial.png" src="https://github.com/Eduardx-2/MorfoFix/blob/main/mofixPy/docs/morfoInicial.png"></a>
 
 ## Cuerpo
 <a href="https://github.com/Eduardx-2/MorfoFix/blob/main/mofixPy/docs/morfoCuerpo.png"><img alt="https://github.com/Eduardx-2/MorfoFix/blob/main/mofixPy/docs/morfoCuerpo.png" src="https://github.com/Eduardx-2/MorfoFix/blob/main/mofixPy/docs/morfoCuerpo.png"></a>
